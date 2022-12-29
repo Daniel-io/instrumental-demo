@@ -1,0 +1,50 @@
+{# nameId custom_id field of setting custom module or default name module filtered #}
+{% set nameId = module.settings.custom_id ? module.settings.custom_id : name|regex_replace("[^a-zA-Z0-9]","") %}
+{% set mainClass = 'instrumental-slider' %}
+{% set classCssModule = [mainClass, name] %}
+{% do classCssModule.append(module.settings.custom_class) if module.settings.custom_class %}
+
+{% set classCssModule = classCssModule|join(' ') %}
+
+{% set persons = hubdb_table_rows(5683536) %}
+
+
+<div class="instrumental-slider">
+
+  <div class="content-wrapper">
+    <div class="c-slider">
+      {% for person in persons %}
+      <div class="c-slider__slide">
+        
+        <div class="c-slider__content">
+          
+          <div class="row-fluid">
+            <div class="c-slider__img-container span4">
+              <img class="c-slider__img" src="{{ person.image.url }}">
+            </div>
+            <div class="span8">
+              <p class="c-slider__quote">
+                {{ person.quote }}
+              </p>
+              <p class="c-slider__name">
+                {{ person.name }}
+              </p>
+              <p class="c-slider__company">
+                {{ person.company }}
+              </p>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

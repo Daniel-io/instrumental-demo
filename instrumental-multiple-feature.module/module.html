@@ -1,0 +1,52 @@
+{# nameId custom_id field of setting custom module or default name module filtered #}
+{% set nameId = module.settings.custom_id ? module.settings.custom_id : name|regex_replace("[^a-zA-Z0-9]","") %}
+{% set mainClass = 'c-multiple-feature' %}
+{% set classCssModule = [mainClass, name, 'instrumental-widget'] %}
+{% do classCssModule.append(module.settings.custom_class) if module.settings.custom_class %}
+
+{% set classCssModule = classCssModule|join(' ') %}
+
+<div id="{{ nameId }}" class="{{ classCssModule }}">
+  
+  <div class="content-wrapper o-band--xl">
+    
+    <div class="{{ mainClass }}__title o-band--sm">
+     <h3>{{ module.title }}</h3> 
+    </div>
+    
+    <div class="row-fluid">
+      {% for item in module.company_image %}
+      <div class="span4">
+		    <img class="c-multiple-feature__img" src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+{% require_css %}
+<style>
+
+  
+  .{{ mainClass }} {
+    background-color: {{ module.style.background_color }};
+  }
+  
+  .{{ mainClass }}__title h3 {
+    font-family: 'Work Sans',sans-serif;
+    text-align: center;
+    color: black;
+  }
+  
+  .c-multiple-feature__img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  
+</style>
+{% end_require_css %}

@@ -1,0 +1,11 @@
+.c-navbar {
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  .c-navbar__logo img {
+    max-width: 70%;
+  }
+}

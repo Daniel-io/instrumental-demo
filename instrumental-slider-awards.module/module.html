@@ -1,0 +1,66 @@
+{# nameId custom_id field of setting custom module or default name module filtered #}
+{% set nameId = module.settings.custom_id ? module.settings.custom_id : name|regex_replace("[^a-zA-Z0-9]","") %}
+{% set mainClass = 'c-slider-awards' %}
+{% set classCssModule = [mainClass, name, 'instrumental-award-slider'] %}
+{% do classCssModule.append(module.settings.custom_class) if module.settings.custom_class %}
+
+{% set classCssModule = classCssModule|join(' ') %}
+
+<!-- Refrence HubDb -->
+<!-- set awards = hubdb_table_rows(5683547)  -->
+{% set awards = hubdb_table_rows(module.hubdbtable_field) %}
+
+<div class="{{ classCssModule }} {{ module.style.vertical_padding }}">
+  <div class="content-wrapper">
+    <div class="c-slider-award-{{nameId}}">
+    {% for award in awards %}
+      <div class="c-slider-award__slide">
+        <img src="{{ award.image.url }}" alt="{{ award.name }}">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+
+
+
+{% require_js %}
+<script>
+  $('.c-slider-award-{{nameId}}').slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: {{ module.slides_to_show_at.at_laptop }},
+        }
+      },
+
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: {{ module.slides_to_show_at.tablet }},
+        }
+      },
+
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: {{ module.slides_to_show_at.phone }},
+        }
+      },
+    ]                     
+  });
+</script>
+{% end_require_js %}
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

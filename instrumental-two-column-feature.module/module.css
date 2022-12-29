@@ -1,0 +1,16 @@
+
+.this-form form input[type=email], 
+.this-form form input[type=file], 
+.this-form form input[type=number], 
+.this-form form input[type=password], 
+.this-form form input[type=tel], 
+.this-form form input[type=text], 
+.this-form form select, 
+.this-form form textarea {
+  max-width: 85%;
+}
+
+
+.this-form .hs-button {
+  background-color: #06f;
+}

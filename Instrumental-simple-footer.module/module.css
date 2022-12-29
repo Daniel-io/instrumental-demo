@@ -1,0 +1,9 @@
+.c-simple-footer__content {
+  text-align: center;
+}
+
+.c-simple-footer__content p {
+  margin: 0;
+  color: white;
+  font-size: 15px;
+}

@@ -1,0 +1,20 @@
+{
+  "global" : false,
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 96707907082,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/slick-slider/slick.css",
+    "name" : "slick.css"
+  }, {
+    "autoload" : true,
+    "path" : "../../css/slick-slider/slick-theme.css",
+    "name" : "slick-theme.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/slick-slider/slick-min.js",
+    "name" : "slick-min.js"
+  } ],
+  "is_available_for_new_content" : true
+}

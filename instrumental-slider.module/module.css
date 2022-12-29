@@ -1,0 +1,32 @@
+.c-slider__slide {
+  padding: 40px;
+  border: 1px solid #66CCCC;
+}
+
+.instrumental-slider {
+  padding: 50px 0;
+}
+
+.c-slider__img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.c-slider__quote {
+  font-family: 'Petrona', serif;
+  font-style: italic;
+}
+
+.c-slider__name {
+  color: #773DBD;
+  margin-bottom: 15px;
+}
+
+.c-slider__company {
+  color: #0066ff;
+  font-size: 20px;
+}
+
+.c-slider__img {
+  margin-bottom: 20px;
+}

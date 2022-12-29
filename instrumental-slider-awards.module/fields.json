@@ -1,0 +1,92 @@
+[ {
+  "id" : "f005c77e-040a-4208-6cab-2b172fac65ff",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b4d2c751-4cd5-258c-6324-ea0e4f396fa5",
+    "name" : "vertical_padding",
+    "display_width" : null,
+    "label" : "Vertical Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "o-band--fl", "none" ], [ "o-band", "default" ], [ "o-band--xs", "extra small" ], [ "o-band--sm", "small" ], [ "o-band--lg", "large" ], [ "o-band--xl", "extra large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "type" : "choice",
+    "default" : "o-band"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "vertical_padding" : "o-band"
+  }
+}, {
+  "id" : "3fecbbe5-722c-fe6b-0a68-19c7164b8ab0",
+  "name" : "hubdbtable_field",
+  "display_width" : null,
+  "label" : "HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "default" : 5683547
+}, {
+  "id" : "35a6b4c1-b5ed-7bf3-e6d8-26c4c1ba2aae",
+  "name" : "slides_to_show_at",
+  "display_width" : null,
+  "label" : "Slides to show at",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e336924f-037f-87cf-7641-cb75020a256f",
+    "name" : "at_laptop",
+    "display_width" : null,
+    "label" : "laptop",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 1,
+    "max" : 6,
+    "step" : 1,
+    "type" : "number",
+    "default" : 4
+  }, {
+    "id" : "84501d78-80d6-7cd2-2bf8-b14387e2728d",
+    "name" : "tablet",
+    "display_width" : null,
+    "label" : "tablet",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 1,
+    "max" : 6,
+    "step" : 1,
+    "type" : "number",
+    "default" : 3
+  }, {
+    "id" : "0bde58c4-881d-db2a-d416-0c03f185f437",
+    "name" : "phone",
+    "display_width" : null,
+    "label" : "phone",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 1,
+    "max" : 6,
+    "step" : 1,
+    "type" : "number",
+    "default" : 1
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "at_laptop" : 4,
+    "tablet" : 3,
+    "phone" : 1
+  }
+} ]

@@ -1,0 +1,56 @@
+[ {
+  "id" : "cf86dd42-efc8-4b2e-765c-2100df01f88d",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Header Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "283b7161-0c38-011a-5a23-f622401ec21f",
+    "name" : "header_background_color",
+    "display_width" : null,
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "#FFFFFF", "White" ], [ "#0066FF", "Ultramarine Blue" ], [ "#CCFF00", "Electric Lime" ], [ "#000000", "Black" ], [ "#CCFFFF", "Celeste" ], [ "#773DBD", "Blue Violet" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "type" : "choice",
+    "default" : "#0066FF"
+  }, {
+    "id" : "b221c849-0a08-6bf1-eb20-fafb036e2b62",
+    "name" : "vertical_padding",
+    "display_width" : null,
+    "label" : "Vertical Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "o-band--fl", "none" ], [ "o-band", "default" ], [ "o-band--xs", "extra small" ], [ "o-band--sm", "small" ], [ "o-band--lg ", "large" ], [ "o-band--xl", "extra large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "type" : "choice",
+    "default" : "o-band--fl"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "header_background_color" : "#0066FF",
+    "vertical_padding" : "o-band--fl"
+  }
+}, {
+  "id" : "a08e576a-31c5-aed3-fa11-fdcba4c2cdae",
+  "name" : "logo_field",
+  "display_width" : null,
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "show_loading" : false,
+  "type" : "logo",
+  "default" : {
+    "override_inherited_src" : false,
+    "src" : null,
+    "alt" : null
+  }
+} ]

@@ -1,0 +1,85 @@
+[ {
+  "id" : "f0c77567-4ecd-a235-b373-93cfa1b9a49c",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "29a3d518-3a30-6871-acc3-20055bf1c185",
+    "name" : "background_color",
+    "display_width" : null,
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "#FFFFFF", "white" ], [ "#0066FF", "Ultramarine Blue" ], [ "#CCFF00", "Electric Lime" ], [ "#000000", "Black" ], [ "#CCFFFF", "Celest" ], [ "#773DBD", "Blue violet" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "type" : "choice",
+    "default" : "#FFFFFF"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "background_color" : "#FFFFFF"
+  }
+}, {
+  "id" : "9f17c983-d506-a02a-5245-0879fb4ab334",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "With unique abilities...."
+}, {
+  "id" : "5625cc70-44b8-ba89-a37d-ec9fc0192beb",
+  "name" : "company_image",
+  "display_width" : null,
+  "label" : "Company Image",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : [ {
+    "size_type" : "auto",
+    "src" : "https://21896595.fs1.hubspotusercontent-na1.net/hubfs/21896595/Screenshot%202022-12-29%20at%208.35.35%20AM.png",
+    "alt" : "Screenshot 2022-12-29 at 8.35.35 AM",
+    "loading" : "lazy",
+    "width" : 748,
+    "height" : 698,
+    "max_width" : 748,
+    "max_height" : 698
+  }, {
+    "size_type" : "auto",
+    "src" : "https://21896595.fs1.hubspotusercontent-na1.net/hubfs/21896595/Screenshot%202022-12-29%20at%208.35.35%20AM.png",
+    "alt" : "Screenshot 2022-12-29 at 8.35.35 AM",
+    "loading" : "lazy",
+    "width" : 748,
+    "height" : 698,
+    "max_width" : 748,
+    "max_height" : 698
+  }, {
+    "size_type" : "auto",
+    "src" : "https://21896595.fs1.hubspotusercontent-na1.net/hubfs/21896595/Screenshot%202022-12-29%20at%208.35.35%20AM.png",
+    "alt" : "Screenshot 2022-12-29 at 8.35.35 AM",
+    "loading" : "lazy",
+    "width" : 748,
+    "height" : 698,
+    "max_width" : 748,
+    "max_height" : 698
+  } ]
+} ]

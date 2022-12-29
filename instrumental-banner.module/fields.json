@@ -1,0 +1,164 @@
+[ {
+  "id" : "07f7ecab-fb96-26f7-f97d-26c1b879f643",
+  "name" : "feature_text",
+  "display_width" : null,
+  "label" : "Feature Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<h1>We help companies scale with HubSpot</h1>\n<p>Serving North America &amp; Latin America</p>"
+}, {
+  "id" : "7caebebe-f6fb-9549-3647-920eec7fee53",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5a40b3d3-8128-f0ec-974d-c5a0bb31c2b9",
+    "name" : "banner_style",
+    "display_width" : null,
+    "label" : "Banner Style",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "0f9fc662-33ad-64f1-3fcd-4f34a958658c",
+      "name" : "column_order",
+      "display_width" : null,
+      "label" : "Column Order",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "row", "Text First" ], [ "row-reverse", "Image First" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "row"
+    }, {
+      "id" : "6f7c539c-3fc1-fadf-855a-fdf893119d6a",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "#FFFFFF", "White" ], [ "#0066FF", "Ultramarine Blue" ], [ "#CCFF00", "Electric Lime" ], [ "#000000", "Black" ], [ "#CCFFFF", "Celest" ], [ "#773DBD", "Blue Violet" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "#0066FF"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "column_order" : "row",
+      "background_color" : "#0066FF"
+    }
+  }, {
+    "id" : "11422a8e-7960-2227-8447-4ad36be8d1a7",
+    "name" : "text_content_style",
+    "display_width" : null,
+    "label" : "Text Content Style",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "03d1d6ca-c5f1-9da9-b65c-611026f21a66",
+      "name" : "titles_color",
+      "display_width" : null,
+      "label" : "Main Title Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "#FFFFFF", "White" ], [ "#0066FF", "Ultramarine Blue" ], [ "#CCFF00", "Electric Lime" ], [ "#000000", "Black" ], [ "#CCFFFF", "Celest" ], [ "#773DBD", "Blue Violet" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "#FFFFFF"
+    }, {
+      "id" : "19eb901b-9bb9-941d-b95e-eefa29073367",
+      "name" : "sub_title_color",
+      "display_width" : null,
+      "label" : "Sub Title Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "#FFFFFF", "White" ], [ "#0066FF", "Ultramarine Blue" ], [ "#CCFF00", "Electric Lime" ], [ "#000000", "Black" ], [ "#CCFFFF", "Celest" ], [ "#773DBD", "Blue Violet" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "#0066FF"
+    }, {
+      "id" : "96124c35-8826-f429-35ff-1c340ba4444f",
+      "name" : "text_color",
+      "display_width" : null,
+      "label" : "Text Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "#FFFFFF", "White" ], [ "#0066FF", "Ultramarine Blue" ], [ "#CCFF00", "Electric Lime" ], [ "#000000", "Black" ], [ "#CCFFFF", "Celest" ], [ "#773DBD", "Blue Violet" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "#FFFFFF"
+    }, {
+      "id" : "ddc85a41-ca06-1da4-b532-8e46b6a9b882",
+      "name" : "content_vertical_alignment",
+      "display_width" : null,
+      "label" : "Content vertical alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "flex-start", "top" ], [ "center", "middle" ], [ "flex-end", "bottom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "type" : "choice",
+      "default" : "center"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "titles_color" : "#FFFFFF",
+      "sub_title_color" : "#0066FF",
+      "text_color" : "#FFFFFF",
+      "content_vertical_alignment" : "center"
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "banner_style" : {
+      "column_order" : "row",
+      "background_color" : "#0066FF"
+    },
+    "text_content_style" : {
+      "titles_color" : "#FFFFFF",
+      "sub_title_color" : "#0066FF",
+      "text_color" : "#FFFFFF",
+      "content_vertical_alignment" : "center"
+    }
+  }
+}, {
+  "id" : "bfc3d216-2345-59b0-2870-cb957945456e",
+  "name" : "banner_feature_image",
+  "display_width" : null,
+  "label" : "Banner feature Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://21896595.fs1.hubspotusercontent-na1.net/hubfs/21896595/instrumental_im_logo.svg",
+    "alt" : "instrumental_im_logo",
+    "loading" : "lazy",
+    "width" : 607,
+    "height" : 610,
+    "max_width" : 607,
+    "max_height" : 610
+  }
+} ]

@@ -1,0 +1,47 @@
+{# nameId custom_id field of setting custom module or default name module filtered #}
+{% set nameId = module.settings.custom_id ? module.settings.custom_id : name|regex_replace("[^a-zA-Z0-9]","") %}
+{% set mainClass = 'c-simple-header' %}
+{% set classCssModule = [mainClass, name, 'instrumental-header'] %}
+{% do classCssModule.append(module.settings.custom_class) if module.settings.custom_class %}
+
+{% set classCssModule = classCssModule|join(' ') %}
+
+
+
+
+
+<div id="{{ nameId }}" class="{{ classCssModule }}">
+  <div class="c-navbar content-wrapper {{ module.style.vertical_padding }}">
+    <!-- SITE lOGO -->
+    <div class="c-navbar__logo logo">
+      {% set loadingAttr = module.logo_field.loading != 'disabled' ? '{{ module.logo_field.loading }}' : '' %}
+       {% logo
+        override_inherited_src="{{ module.logo_field.override_inherited_src }}"
+        src="{{ module.logo_field.src }}"
+        alt="{{ module.logo_field.alt }}"
+        width="{{ module.logo_field.width }}"
+        height="{{ module.logo_field.height }}"
+        loading="{{ loadingAttr }}"
+        suppress_company_name="{{ module.logo_field.suppress_company_name }}"
+      %}
+    </div>
+    <!-- END SITE lOGO -->
+  </div>
+</div>
+
+
+
+
+
+{% require_css %}
+  <style>
+    
+    .{{ mainClass }} {
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+      background-color: {{ module.style.header_background_color }};
+    }
+    
+  </style>
+{% end_require_css %}

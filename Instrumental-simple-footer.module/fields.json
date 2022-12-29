@@ -1,0 +1,73 @@
+[ {
+  "id" : "cf86dd42-efc8-4b2e-765c-2100df01f88d",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Header Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "283b7161-0c38-011a-5a23-f622401ec21f",
+    "name" : "header_background_color",
+    "display_width" : null,
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "#FFFFFF", "White" ], [ "#0066FF", "Ultramarine Blue" ], [ "#CCFF00", "Electric Lime" ], [ "#000000", "Black" ], [ "#CCFFFF", "Celeste" ], [ "#773DBD", "Blue Violet" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "type" : "choice",
+    "default" : "#0066FF"
+  }, {
+    "id" : "b221c849-0a08-6bf1-eb20-fafb036e2b62",
+    "name" : "vertical_padding",
+    "display_width" : null,
+    "label" : "Vertical Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "o-band--fl", "none" ], [ "o-band", "default" ], [ "o-band--xs", "extra small" ], [ "o-band--sm", "small" ], [ "o-band--lg ", "large" ], [ "o-band--xl", "extra large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "type" : "choice",
+    "default" : "o-band--fl"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "header_background_color" : "#0066FF",
+    "vertical_padding" : "o-band--fl"
+  }
+}, {
+  "id" : "823d8400-d244-f2d8-1c29-d0f011edec27",
+  "name" : "copy",
+  "display_width" : null,
+  "label" : "copy",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "© 2022 Instrumental Group LLC"
+}, {
+  "id" : "f6cfe8f1-31a8-b282-a897-81b161d93d5d",
+  "name" : "link_field",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+} ]

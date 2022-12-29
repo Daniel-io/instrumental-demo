@@ -1,0 +1,90 @@
+{# nameId custom_id field of setting custom module or default name module filtered #}
+{% set nameId = module.settings.custom_id ? module.settings.custom_id : name|regex_replace("[^a-zA-Z0-9]","") %}
+{% set mainClass = 'c-two-column-feature' %}
+{% set classCssModule = [mainClass, name] %}
+{% do classCssModule.append(module.settings.custom_class) if module.settings.custom_class %}
+
+{% set classCssModule = classCssModule|join(' ') %}
+
+<div id="{{ nameId }}" class="{{ classCssModule }}">
+  <div class="content-wrapper">
+    <div class="row-fluid {{ module.style.column_order }}">
+      <div class="{{ mainClass }}__content span6">
+        {% inline_rich_text field="feature_text" value="{{ module.feature_text }}" %}
+      </div>
+      <div class="span6 this-form">
+        {% form
+	form_to_use="{{ module.feature_form.form_id }}"
+	response_response_type="{{ module.feature_form.response_type }}"
+	response_message="{{ module.feature_form.message }}"
+	response_redirect_id="{{ module.feature_form.redirect_id }}"
+	response_redirect_url="{{module.feature_form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.feature_form.gotowebinar_webinar_key }}"
+%}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% require_css %}
+
+  <style>
+    .{{ mainClass }} {
+      background-color: {{ module.style.background_color }};
+      padding: 40px 0;
+    }
+
+    .{{ mainClass }}__content h1,
+    .{{ mainClass }}__content h2 {
+      color:   {{ module.style.main_title_color }};
+    }
+    
+    
+    .{{ mainClass }}__content p,
+    .{{ mainClass }}__content li {
+      color: {{ module.style.text_color }};
+    }
+    .{{ mainClass }}__content ul {
+                 list-style-type: none;
+    }
+    
+    @media (min-width: 576px) {
+      .{{ mainClass }}__content ul {
+        -moz-column-count: 2;
+        -moz-column-gap: 10px;
+        -webkit-column-count: 4;
+        -webkit-column-gap: 10px;
+        column-count: 2;
+        column-gap: 10px;
+      }
+    }
+
+    
+    .{{ mainClass }}__content ul li::before {
+
+      font-weight: bold;
+      width: 1em;
+      background-image: url(https://www.revenueriver.co/hubfs/instrumental_website/arrow_list.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+/*       background-size: contain; */
+      content: '';
+      height: 1em;
+      vertical-align: middle;
+      padding-right: 25px;
+      display: inline;
+      margin-left: -1.6em;
+      margin-right: 10px;
+    }
+    
+    .row {
+      flex-direction: row;
+    }
+    .row-reverse {
+      flex-direction: row-reverse;
+    }
+  </style>
+
+{% end_require_css %}

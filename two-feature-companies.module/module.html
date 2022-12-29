@@ -1,0 +1,53 @@
+{# nameId custom_id field of setting custom module or default name module filtered #}
+{% set nameId = module.settings.custom_id ? module.settings.custom_id : name|regex_replace("[^a-zA-Z0-9]","") %}
+{% set mainClass = 'c-two-feature-companies' %}
+{% set classCssModule = [mainClass, name, 'instrumental-widget'] %}
+{% do classCssModule.append(module.settings.custom_class) if module.settings.custom_class %}
+
+{% set classCssModule = classCssModule|join(' ') %}
+
+<div id="{{ nameId }}" class="{{ classCssModule }}">
+  
+  <div class="content-wrapper o-band--lg">
+    
+    <div class="{{ mainClass }}__title o-band--sm">
+     <h3>{{ module.title }} </h3> 
+    </div>
+    
+    <div class="row-fluid">
+      {% for item in module.company_image %}
+      <div class="span6">
+        <a href="{{ module.link_to_company.url.href }}">
+        <img class="c-two-feature-companies__img" src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        </a>		    
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+{% require_css %}
+<style>
+
+  
+  .{{ mainClass }} {
+    background-color: {{ module.style.background_color }};
+  }
+  
+  .{{ mainClass }}__title h3 {
+    font-family: 'Work Sans',sans-serif;
+    text-align: center;
+    color: black;
+  }
+  
+  .c-two-feature-companies__img {
+    width: 100%;
+  }
+  
+  
+</style>
+{% end_require_css %}

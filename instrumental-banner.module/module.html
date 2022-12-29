@@ -1,0 +1,73 @@
+{# nameId custom_id field of setting custom module or default name module filtered #}
+{% set nameId = module.settings.custom_id ? module.settings.custom_id : name|regex_replace("[^a-zA-Z0-9]","") %}
+{% set mainClass = 'c-banner' %}
+{% set classCssModule = [mainClass, name, 'instrumental-header'] %}
+{% do classCssModule.append(module.settings.custom_class) if module.settings.custom_class %}
+
+{% set classCssModule = classCssModule|join(' ') %}
+
+<div id="{{ nameId }}" class="{{ classCssModule }}">
+  <div class="content-wrapper">
+    <div class="row-fluid {{ module.style.banner_style.column_order }}">
+      <div class="c-banner__text-container span6">
+        {% inline_rich_text field="feature_text" value="{{ module.feature_text }}" %}
+      </div>
+      <div class="c-banner__img-container span6">
+        {% if module.banner_feature_image.src %}
+        {% set sizeAttrs = 'width="{{ module.banner_feature_image.width }}" height="{{ module.banner_feature_image.height }}"' %}
+        {% if module.banner_feature_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.banner_feature_image.width }}" height="{{ module.banner_feature_image.height }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.banner_feature_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.banner_feature_image.max_width }}" height="{{ module.banner_feature_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.banner_feature_image.loading != 'disabled' ? 'loading="{{ module.banner_feature_image.loading }}"' : '' %}
+        <img src="{{ module.banner_feature_image.src }}" alt="{{ module.banner_feature_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% require_css %}
+
+  <style>
+    
+    .{{ mainClass }} {
+      padding-top: 100px;
+      background-color: {{ module.style.banner_style.background_color }};
+    }
+    
+    .row {
+      flex-direction: row;
+    }
+    .row-reverse {
+      flex-direction: row-reverse;
+    }
+    
+    .c-banner__text-container {
+      display: flex;
+      align-items: {{ module.style.text_content_style.content_vertical_alignment }};
+      justify-content: center;
+    }
+    
+    .c-banner__text-container h1 {
+      color: {{ module.style.text_content_style.titles_color }};
+    }
+ 
+    .c-banner__text-container h2,
+    .c-banner__text-container h3,
+    .c-banner__text-container h4,
+    .c-banner__text-container h5,
+    .c-banner__text-container h6 {
+      color: {{ module.style.text_content_style.sub_title_color }};
+    }
+    
+    .c-banner__text-container p {
+      color: {{ module.style.text_content_style.text_color }};
+    }
+    
+  </style>
+
+{% end_require_css %}

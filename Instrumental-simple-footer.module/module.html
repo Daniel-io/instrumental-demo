@@ -1,0 +1,33 @@
+{# nameId custom_id field of setting custom module or default name module filtered #}
+{% set nameId = module.settings.custom_id ? module.settings.custom_id : name|regex_replace("[^a-zA-Z0-9]","") %}
+{% set mainClass = 'c-simple-footer' %}
+{% set classCssModule = [mainClass, name, 'instrumental-footer'] %}
+{% do classCssModule.append(module.settings.custom_class) if module.settings.custom_class %}
+
+{% set classCssModule = classCssModule|join(' ') %}
+
+
+
+
+
+<div id="{{ nameId }}" class="{{ classCssModule }} {{ module.style.vertical_padding }}">
+  <div class="c-simple-footer__content">
+    <p>
+      {{ module.copy }}
+    </p>
+  </div>
+</div>
+
+
+
+
+
+{% require_css %}
+  <style>
+    
+    .{{ mainClass }} {
+      background-color: {{ module.style.header_background_color }};
+    }
+    
+  </style>
+{% end_require_css %}

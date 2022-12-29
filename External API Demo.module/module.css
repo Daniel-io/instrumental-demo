@@ -1,0 +1,33 @@
+.this-titile,
+.this-text {
+  text-align: center;
+}
+
+.input-form {
+   width: 90% !important;
+   margin: 0 auto !important;
+  display: block !important;
+}
+
+.poke-card {
+  text-align: center;
+  border: 1px solid lightgray;
+  padding: 20px;
+  box-shadow: 10px 5px 5px lightgray;
+  margin: 40px 0;
+  min-width: 300px;
+}
+
+.poke-img {
+  border-radius: 50%;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  text-align: center;
+}
